@@ -17,6 +17,7 @@ class OAuth2BasicAuthenticator < ::Auth::OAuth2Authenticator
                         opts[:client_secret] = SiteSetting.oauth2_client_secret
                         opts[:provider_ignores_state] = true
                         opts[:client_options] = {
+                          raise_errors: true,
                           authorize_url: SiteSetting.oauth2_authorize_url,
                           token_url: SiteSetting.oauth2_token_url
                         }
